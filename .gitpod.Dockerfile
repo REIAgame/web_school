@@ -12,7 +12,7 @@ USER root
 # More information: https://www.gitpod.io/docs/42_config_docker/
 COPY ["google-chrome-stable_current_amd64.deb","/google-chrome-stable_current_amd64.deb"]
 RUN pwd
-RUN ls -l
+RUN ls -l /
 RUN apt -y update && \
     apt -y install libnss3 && \
     apt -y install libnspr4 && \
