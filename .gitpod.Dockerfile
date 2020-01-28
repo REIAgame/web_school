@@ -17,4 +17,7 @@ RUN apt -y update && \
     apt -y install libnss3 && \
     apt -y install libnspr4 && \
     apt -y install /google-chrome-stable_current_amd64.deb && \
-    apt -y install iputils-ping net-tools
+    apt -y install iputils-ping net-tools && \
+    chmod 4777 /usr/bin/ping && \
+    chmod 4777 /usr/bin/ping4 && \
+    chmod 4777 /usr/bin/ping6 && \
