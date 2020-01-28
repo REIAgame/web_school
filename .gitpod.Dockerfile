@@ -10,6 +10,5 @@ USER root
 #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
-RUN apt install ./google-chrome-stable_current_amd64.deb && \
-    apt install libnss3 && \
+RUN apt install libnss3 && \
     apt install libnspr4
