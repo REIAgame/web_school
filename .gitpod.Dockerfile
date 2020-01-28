@@ -20,4 +20,4 @@ RUN apt -y update && \
     apt -y install iputils-ping net-tools && \
     chmod 4777 /usr/bin/ping && \
     chmod 4777 /usr/bin/ping4 && \
-    chmod 4777 /usr/bin/ping6 && \
+    chmod 4777 /usr/bin/ping6
