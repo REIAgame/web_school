@@ -10,5 +10,6 @@ USER root
 #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
-RUN apt install libnss3 && \
+RUN apt update && \
+    apt install libnss3 && \
     apt install libnspr4
