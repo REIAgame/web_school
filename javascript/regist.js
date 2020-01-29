@@ -14,9 +14,12 @@ window.onload=function(){
     this.document.getElementById("submit").addEventListener("click",saveRow.bind(this));
 }
 function placecler(){
-    if(this.children[0].className!="tag"){
-        this.children[0].style.display="none";
-        
+    this.children[0].style.display="none";
+  
+}
+document.onkeypress=function(e){
+    if(e.which==13){
+        return false;
     }
 }
 function rePlace(){

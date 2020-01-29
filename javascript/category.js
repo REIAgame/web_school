@@ -1,6 +1,7 @@
 let ids=[];
 let imgs=[];
 let xmls=[];
+let getCheck=[];
 let genelateBool=false;
 let is_done=false;
 let p=document.createElement("p");
@@ -60,11 +61,23 @@ function getRes(){
         }else{
             let getImg=new XMLHttpRequest();
             getImg.open("GET","//capture.heartrails.com/api/capture/huge/?"+URL);
-            getImg.send();
-            genelateCheck(URL);
-            parent.src="http://capture.heartrails.com/huge?"+URL;
+            getImg.send();       
+            getCheck.push(imch=setInterval(imgCheck(parent,URL),1000))
         }
     }
     is_done=false;
     genelateBool=false;
+}
+function imgCheck(parent,URL){
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET","//capture.heartrails.com/api/is_done/huge/?"+URL);
+    xhr.send();
+    xhr.onloadend=function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            if(JSON.parse(xhr.response).result){
+                parent.src="http://capture.heartrails.com/huge?"+URL;
+                clearInterval(getCheck.shift());
+            }
+        }
+    }
 }
